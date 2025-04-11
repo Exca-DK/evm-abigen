@@ -2,9 +2,17 @@
 
 `ABIGEN` is a tool to generate Go bindings from multiple ABIs using Docker. It can automate the process of compiling and binding multiple Ethereum contract ABIs into Go code, simplifying integration with smart contracts.
 
+## Installation
 
+To install the application, run:
+
+```bash
+go install github.com/Exca-DK/evm-abigen/cmd/abibinder@latest
+```
+## Run
+To run with the configuration, use:
 ```sh
-go run cmd/abibinder/main.go
+abibinder --config=<CONFIG_PATH>
 ```
 
 ## COMMANDS:
@@ -23,7 +31,7 @@ This example demonstrates how to define ABI files and their associated configura
 - simple.yaml
 ``` yaml
 abis:
-- abi: "foo/quoter.abi"
+  - abi: "foo/quoter.abi"
     package: "quoter"
     output: "foo_out/quoter.go"
     type: file
@@ -32,7 +40,7 @@ abis:
 - foundry.yaml
 ``` yaml
 abis:
-- abi: "foo/quoter.abi"
+  - abi: "foo/quoter.abi"
     package: "quoter"
     output: "foo_out/quoter.go"
     type: foundry
